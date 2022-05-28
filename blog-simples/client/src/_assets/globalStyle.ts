@@ -6,14 +6,9 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Lexend Deca", sans-serif;
     }
 
-    :root{
-        --margin-center: 56.25rem;
-        --section-one-height: 15.625rem;
-        --section-two-card-news-height: 12.188rem;
-        --section-two-card-news-top: 21.875rem;
-        --section-two-card-news-radius: 0.313rem;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 `;
