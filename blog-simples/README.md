@@ -35,7 +35,7 @@ Dependências:
     yarn add @types/react @types/node -D
 ~~~
 
-3. Instalei o eslint o eslint e configurei: 
+3. Instalei o eslint e configurei: 
 ~~~
     // Código de instalação do eslint
     yarn add eslint -D
