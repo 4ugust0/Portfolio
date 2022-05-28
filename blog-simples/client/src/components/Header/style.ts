@@ -28,12 +28,13 @@ export const InputFilter = styled.input<{ icon?: string }>`
   padding-left: 5rem;
   padding-right: 2rem;
 
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.2);
   background-image: url(${(props) => props.icon});
   background-repeat: no-repeat;
-  background-position-y: 90px;
 
   border: 0;
+  border-radius: 0.313rem;
+
   color: #ffffff;
 
   &:focus {

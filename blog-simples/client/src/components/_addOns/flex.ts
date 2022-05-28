@@ -12,6 +12,8 @@ export const ContainerFlex = styled.div<{
   align_items?: string;
   align_content?: string;
   justify_content?: string;
+  background_color?: string;
+  radius?: string;
 }>`
   display: flex;
   width: ${(props) => props.width};
@@ -25,4 +27,6 @@ export const ContainerFlex = styled.div<{
   align-items: ${(props) => props.align_items};
   align-content: ${props => props.align_content};
   justify-content: ${(props) => props.justify_content};
+  background-color: ${props => props.background_color};
+  border-radius: ${props => props.radius};
 `;
