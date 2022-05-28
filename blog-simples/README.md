@@ -6,7 +6,7 @@ Os créditos estão no README principal!
 
 <br>
 
-### O que vamos utilizar para realizar o desenvolvimento desse sistema?
+### O que utilizei para realizar o desenvolvimento desse sistema?
 
 1. Next JS
 2. Typescript
