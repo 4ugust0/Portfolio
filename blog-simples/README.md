@@ -17,7 +17,7 @@ link da api: http://servicodados.ibge.gov.br/api/v3/noticias/
 
 <br>
 
-### Agora que você viu o que iremos utilizar, vamos para a famosa configuração do sistema...
+### Agora que você viu o que utilizei, vamos para a famosa configuração do sistema...
 
 <br>
 
