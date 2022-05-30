@@ -21,8 +21,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    "quotes": [2, "single", { "avoidEscape": true }],
-    "semi": [2, "always"],
-    
+    "semi": [2, "never"],
+    "quotes": [2, "backtick", "single"]
   }
 }
