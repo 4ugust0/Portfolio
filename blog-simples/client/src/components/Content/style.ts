@@ -19,3 +19,12 @@ export const Text = styled.p `
     color: ${({ theme: { Palette } }) => Palette.text};
 
 `
+
+export const ButtonLike = styled.button `
+
+    height: 1.5rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+`

@@ -5,7 +5,7 @@ import { Header } from "../components/Header";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Blog - Simples</title>
         <meta
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <Header />
         <Content />
       </main>
-    </div>
+    </>
   );
 };
 
