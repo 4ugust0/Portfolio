@@ -1,4 +1,10 @@
-import HeartSVG from "./heart.svg";
-import SearchSVG from "./search.svg";
+import Heart from "./heart.svg";
+import Search from "./search.svg";
 
-export type { HeartSVG, SearchSVG };
+export function HeartSVG () {
+    return <Heart />
+}
+
+export function SearchSVG () {
+    return <Search />
+}
