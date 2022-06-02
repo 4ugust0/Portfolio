@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/styled-components": "^5.1.25",
     "@types/typescript": "^2.0.0",
+    "axios": "^0.27.2",
     "next": "12.1.6",
     "next-images": "^1.8.4",
     "next-react-svg": "^1.1.3",
