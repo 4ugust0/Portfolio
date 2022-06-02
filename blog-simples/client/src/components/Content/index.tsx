@@ -18,7 +18,7 @@ export const Content: React.FC = () => {
     } else {
       setLoad(true);
     }
-    return await axios.get("http://servicodados.ibge.gov.br/api/v3/noticias/");
+    return await axios.get("https://servicodados.ibge.gov.br/api/v3/noticias/");
   }, [moreNews]);
 
   useEffect(() => {
