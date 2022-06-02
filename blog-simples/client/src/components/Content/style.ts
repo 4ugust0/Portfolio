@@ -8,7 +8,7 @@ export const Date = styled.h3`
 export const Title = styled.h1`
   color: ${({ theme: { Palette } }) => Palette.title};
   font-size: 1.625rem;
-  line-height: 2.031;
+  margin-top: 1.375rem;
 `;
 
 export const Text = styled.p`
