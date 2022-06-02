@@ -8,6 +8,7 @@ export const Container = styled.div<{
   left?: string;
   background?: string;
   radius?: string;
+  text_align?: string
 }>`
   padding: ${(props) => props.pad};
   margin-top: ${(props) => props.top};
@@ -16,4 +17,5 @@ export const Container = styled.div<{
   height: ${(props) => props.height};
   background: ${(props) => props.background};
   border-radius: ${(props) => props.radius};
+  text-align: ${(props) => props.text_align};
 `;
