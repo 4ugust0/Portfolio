@@ -3,7 +3,12 @@ export interface WrapperElements {
 }
 
 export interface CardNewsInterface {
-  date: string,
-  title: string,
-  text: string
+  date: string;
+  title: string;
+  text: string;
+}
+
+export interface SearchInterface {
+  onChange: (e: any) => void;
+  onSubmit: (e: any) => void;
 }
