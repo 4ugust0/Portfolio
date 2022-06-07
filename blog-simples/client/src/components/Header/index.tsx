@@ -5,11 +5,9 @@ import { ContainerFlex } from "../_addOns/flex";
 import { SearchSVG } from "../../_assets/images/_index";
 
 import { Background, Brand, InputFilter } from "./style";
-import JsonProvider, { JsonContext } from "../../_config/context";
+import { filtering } from "../../utils/filter";
 
 export const Header: React.FC = () => {
-  const { filtering } = useContext(JsonContext)
-
   return (
     <Theme>
       <Background>
