@@ -15,7 +15,8 @@ export const Header: React.FC = () => {
           <form
             onSubmit={(e: any) => {
               e.preventDefault();
-              filtering();
+              const isItems = [{ name: "Augusto" }, { name: "Olá Mundo" }];
+              filtering('Olá', isItems);
             }}
           >
             <ContainerFlex height="100%" flex_direction="column">

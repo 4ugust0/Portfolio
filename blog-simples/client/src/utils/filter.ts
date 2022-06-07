@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-export function filtering() {
-    const message = 'Augusto'
-  const isItems = [
-    { name: "Augusto" },
-    { name: "Olá Mundo" },
-  ];
+interface InitialStateInterface {
+  name: string
+}
+
+export function filtering(search: string, data: InitialStateInterface[] ) {
+  const message = search;
+  const isItems = data;
 
   if (message.trim() !== "") {
     const filterName = isItems.filter((item) => {
@@ -14,6 +15,7 @@ export function filtering() {
         .toLowerCase()
         .includes(message.toLowerCase());
     });
-    console.log(filterName)
+    console.log(filterName);
+
   }
 }
