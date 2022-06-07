@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import Theme from "../../helpers/theme";
 import { Center } from "../_addOns/centralization";
 import { ContainerFlex } from "../_addOns/flex";
 import { SearchSVG } from "../../_assets/images/_index";
 
 import { Background, Brand, InputFilter } from "./style";
-import { SearchInterface } from "../../helpers/interfaces";
+import JsonProvider, { JsonContext } from "../../_config/context";
 
-export const Header: React.FC<SearchInterface> = (props) => {
+export const Header: React.FC = () => {
+  const { filtering } = useContext(JsonContext)
 
   return (
     <Theme>
       <Background>
         <Center>
           <form
-            onSubmit={props.onSubmit}
+            onSubmit={(e: any) => {
+              e.preventDefault();
+              filtering();
+            }}
           >
             <ContainerFlex height="100%" flex_direction="column">
               <ContainerFlex
@@ -34,11 +38,7 @@ export const Header: React.FC<SearchInterface> = (props) => {
                 pad="0 1.268rem"
               >
                 <SearchSVG />
-                <InputFilter
-                  type="text"
-                  placeholder="Pesquisar no blog"
-                  onChange={props.onChange}
-                />
+                <InputFilter type="text" placeholder="Pesquisar no blog" />
               </ContainerFlex>
             </ContainerFlex>
           </form>

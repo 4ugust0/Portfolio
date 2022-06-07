@@ -7,8 +7,3 @@ export interface CardNewsInterface {
   title: string;
   text: string;
 }
-
-export interface SearchInterface {
-  onChange: (e: any) => void;
-  onSubmit: (e: any) => void;
-}

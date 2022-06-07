@@ -1,19 +1,23 @@
 import React, { createContext } from "react";
 
-type InitialStateType = {
-  array: arrayType[];
+interface InitialStateInterface {
+  filtering: () => void;
+}
+
+const defaultValue: InitialStateInterface = {
+  filtering: () => {},
 };
 
-type arrayType = {
-  name: string;
-};
-
-export const JsonContext = createContext({} as InitialStateType);
+export const JsonContext = createContext<InitialStateInterface>(defaultValue);
 
 export default function JsonProvider({ children }: any) {
-  const array: arrayType[] = [{name: 'Kayo'}];
+  const filtering = () => {
+    return alert("Olá Mundo");
+  };
 
   return (
-    <JsonContext.Provider value={{ array }}>{children}</JsonContext.Provider>
+    <JsonContext.Provider value={{ filtering }}>
+      {children}
+    </JsonContext.Provider>
   );
 }
