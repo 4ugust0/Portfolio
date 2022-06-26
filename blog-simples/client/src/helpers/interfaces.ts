@@ -7,3 +7,17 @@ export interface CardNewsInterface {
   title: string;
   text: string;
 }
+
+export interface filterInterface {
+  filtering: (isMessage: string) => void;
+  responseFilter: {}[];
+  load: boolean;
+  setCountFunc: () => void;
+}
+
+export const defaultValue: filterInterface = {
+  filtering: () => {},
+  responseFilter: [{}],
+  load: false,
+  setCountFunc: () => {},
+};

@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Theme from "../../helpers/theme";
 import { Center } from "../_addOns/centralization";
 import { ContainerFlex } from "../_addOns/flex";
 import { SearchSVG } from "../../_assets/images/_index";
 
 import { Background, Brand, InputFilter } from "./style";
-import { filtering } from "../../utils/filter";
+import { FilterNews } from "../../_config/context";
 
 export const Header: React.FC = () => {
+  const [message, setMessage] = useState("");
+
+  const { filtering } = useContext(FilterNews);
+
   return (
     <Theme>
       <Background>
@@ -15,8 +19,7 @@ export const Header: React.FC = () => {
           <form
             onSubmit={(e: any) => {
               e.preventDefault();
-              const isItems = [{ name: "Augusto" }, { name: "Olá Mundo" }];
-              filtering('Olá', isItems);
+              filtering(message);
             }}
           >
             <ContainerFlex height="100%" flex_direction="column">
@@ -37,7 +40,11 @@ export const Header: React.FC = () => {
                 pad="0 1.268rem"
               >
                 <SearchSVG />
-                <InputFilter type="text" placeholder="Pesquisar no blog" />
+                <InputFilter
+                  type="text"
+                  placeholder="Pesquisar no blog"
+                  onChange={(e: any) => setMessage(e.target.value)}
+                />
               </ContainerFlex>
             </ContainerFlex>
           </form>

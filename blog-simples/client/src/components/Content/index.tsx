@@ -1,51 +1,13 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Theme from "../../helpers/theme";
 import { CardNews } from "../CardNews";
 import { Center } from "../_addOns/centralization";
 import { Container } from "../_addOns/container";
-import axios from "axios";
 import { Button, Loading } from "./style";
+import { FilterNews } from "../../_config/context";
 
 export const Content: React.FC = () => {
-  const [news, setNews] = useState([{}]);
-  const [load, setLoad] = useState(false);
-  const [count, setCount] = useState(5);
-  const [moreNews, setMoreNews] = useState(false);
-
-  const getApi = useCallback(async () => {
-    if (moreNews !== false) {
-      setLoad(false);
-    } else {
-      setLoad(true);
-    }
-    return await axios.get("https://servicodados.ibge.gov.br/api/v3/noticias/");
-  }, [moreNews]);
-
-  useEffect(() => {
-    getApi().then((res) => {
-      setLoad(false);
-      function pagination(items: any, pageActual: number, limitItems: number) {
-        let result = [];
-
-        let totalPage = Math.ceil(items.length / limitItems);
-        let count = pageActual * limitItems - limitItems;
-        let delimiter = count + limitItems;
-
-        if (pageActual <= totalPage) {
-          for (let i = count; i < delimiter; i++) {
-            result.push(items[i]);
-            count++;
-          }
-        }
-
-        return result;
-      }
-
-      var result = pagination(res.data.items, 1, count);
-
-      setNews(result);
-    });
-  }, [count]);
+  const { responseFilter, load, setCountFunc } = useContext(FilterNews);
 
   return (
     <Theme>
@@ -54,7 +16,7 @@ export const Content: React.FC = () => {
           {load ? (
             <Loading>Carregando Noticias...</Loading>
           ) : (
-            news.map((Noticia: any, items) => (
+            responseFilter.map((Noticia: any, items) => (
               <CardNews
                 key={items}
                 date={Noticia.data_publicacao}
@@ -66,8 +28,7 @@ export const Content: React.FC = () => {
           <Container text_align="center">
             <Button
               onClick={() => {
-                setMoreNews(true);
-                setCount(count + 5);
+                setCountFunc();
               }}
             >
               Veja mais

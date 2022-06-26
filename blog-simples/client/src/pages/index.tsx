@@ -4,6 +4,7 @@ import { Content } from "../components/Content";
 import { Header } from "../components/Header";
 
 const Home: NextPage = () => {
+  const test = [{ name: "Augusto" }, { name: "João" }];
 
   return (
     <>
