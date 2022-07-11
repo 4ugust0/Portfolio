@@ -7,6 +7,10 @@ export const Themes = {
     gray: "#474747",
     black_light: "#181818",
   },
+  Typoraphy: {
+    Montserrat_Semi_Bold: "600",
+    Montserrat_Medium: "500",
+  },
 };
 
 const Theme = ({ children }: any) => {
