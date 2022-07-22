@@ -41,7 +41,7 @@ function FilterNewsProvicer({ children }: any) {
         return result;
       }
 
-      var result = pagination(res.data.items, 1, count);
+      var result = pagination(res.data.items, 0, count);
 
       setResponseFilter(result);
       setResponseStorage(result);
